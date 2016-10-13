@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/styl.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-3.1.1.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+            var a = true;
+            function visi() {
+                if (a == true) {
+                    $('#efface').hide();
+                    a = false;
+                } else {
+                    $('#efface').show();
+                    a = true;
+                }
+            }
+            function visi2() {
+                if (a == true) {
+                    $('#efface').hide();
+                } else {
+                    $('#efface').show();
+                }
+                a = !a;
+            }
+            function visi3(){
+                $('#efface').toggleClass('hidden');
+            }
+        </script>
+    </head>
+
+    <body>
+        <p>TODO write content</p>
+        <input type="button" value="afficher /masquer" onclick="visi3();"/>
+        <div id="efface">efface la liste </div>
+    </body>
+    <p><a href="index.html" target="self">retour vers index</a></p>
+</html>
