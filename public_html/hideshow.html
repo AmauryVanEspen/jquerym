@@ -32,14 +32,16 @@ and open the template in the editor.
                 a = !a;
             }
             function visi3(){
-                $('#efface').toggleClass('hidden');
+                //$('#efface').toggleClass('cssstyle'); cible #efface pour appliquer uneclass cssstyle
+                $('#efface').toggle(); //affiche desaffiche
+                
             }
         </script>
     </head>
 
     <body>
         <p>TODO write content</p>
-        <input type="button" value="afficher /masquer" onclick="visi3();"/>
+        <input type="button" value="afficher /masquer"  onclick="visi3();"/>
         <div id="efface">efface la liste </div>
     </body>
     <p><a href="index.html" target="self">retour vers index</a></p>

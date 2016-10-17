@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery-3.1.1.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            //1.demander le nb de case
+            //2.generer le tableau avec paire de case
+            //3. tourner une case pour 
+            //4. case identique?> retourne ou enleve
+            //5.  reste t il des case a retourner ?-> oui continue, non sortie-> afficher le nb de coups utilisés
+            //6.  boucle
+            //
+            //init
+            var tabcomp = new Array();
+            var nomcolor = ["AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Beige", "Bisque", "Black", "BlanchedAlmond", "Blue", "BlueViolet", "Brown", "BurlyWood", "CadetBlue", "Chartreuse", "Chocolate", "Coral", "CornflowerBlue", "Cornsilk", "Crimson", "Cyan", "DarkBlue", "DarkCyan", "DarkGoldenRod", "DarkGray", "DarkGrey", "DarkGreen", "DarkKhaki", "DarkMagenta", "DarkOliveGreen", "Darkorange", "DarkOrchid", "DarkRed", "DarkSalmon", "DarkSeaGreen", "DarkSlateBlue", "DarkSlateGray", "DarkSlateGrey", "DarkTurquoise", "DarkViolet", "DeepPink", "DeepSkyBlue", "DimGray", "DimGrey", "DodgerBlue", "FireBrick", "FloralWhite", "ForestGreen", "Fuchsia", "Gainsboro", "GhostWhite", "Gold", "GoldenRod", "Gray", "Grey", "Green", "GreenYellow", "HoneyDew", "HotPink", "IndianRed", "Indigo", "Ivory", "Khaki", "Lavender", "LavenderBlush", "LawnGreen", "LemonChiffon", "LightBlue", "LightCoral", "LightCyan", "LightGoldenRodYellow", "LightGray", "LightGrey", "LightGreen", "LightPink", "LightSalmon", "LightSeaGreen", "LightSkyBlue", "LightSlateGray", "LightSlateGrey", "LightSteelBlue", "LightYellow", "Lime", "LimeGreen", "Linen", "Magenta", "Maroon", "MediumAquaMarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen", "MediumSlateBlue", "MediumSpringGreen", "MediumTurquoise", "MediumVioletRed", "MidnightBlue", "MintCream", "MistyRose", "Moccasin", "NavajoWhite", "Navy", "OldLace", "Olive", "OliveDrab", "Orange", "OrangeRed", "Orchid", "PaleGoldenRod", "PaleGreen", "PaleTurquoise", "PaleVioletRed", "PapayaWhip", "PeachPuff", "Peru", "Pink", "Plum", "PowderBlue", "Purple", "Red", "RosyBrown", "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown", "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue", "SlateBlue", "SlateGray", "SlateGrey", "Snow", "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "White", "WhiteSmoke", "Yellow", "YellowGreen"];
+            var nomcolor2 = new Array();
+            nomcolor2 = nomcolor;
+            var choisi = [];
+            var nb2=(Math.pow(nb,2))/2;
+                        for (var i = 0; i < nb2; i++) { //nb2=(nb²)/2 ->nb total de couleurs utilisées
+
+            // Randomly pick one from the array of nomcolor2
+            var rdind = Math.floor(Math.random(nomcolor2.length));
+            var jeton = jeton[rdind];
+            // Push 2 copies onto array
+            choisi.push(jeton);
+            choisi.push(jeton);
+            // Remove from jeton array so we don't re-pick
+            jeton.splice(rdind, 1);
+            }
+            choisi.sort(function() {
+            return 0.5 - random();
+            });
+            // input ou alert pour nb de case
+            function debut() {
+            alert('initialisation de demarage');
+            //$('input').click(clicsurbouton);
+            //var tabcomp=[];
+            var nb = "";
+            var tab = "";
+            var alea = 0;
+            nb = prompt("Entrer un nb paire case du tableau a creer");
+            //verif de saisie
+            while (nb % 2 != 0 || nb == 0 || nb == null || nb == "" || nb < 0 || nb > 21 || isNaN(nb)) {
+            alert('valeur incorrect, il faut resaisir');
+            nb = prompt("Entrer un nb paire case du tableau a creer");
+            }
+
+            alert('valeur correcte, generation du tableau');
+            //generation du tableau
+            $('.tableau').append('<table>');
+            for (a = 0; a < nb; a++) {
+            $('table').append('<tr>');
+            for (b = 0; b < nb; b++) {
+            $('tr:last').append('<td>');
+            $('tr:last').append('<input type="button" value="" onclick="" style="width:50px; height:50px">');
+            /*           var az,bz,cz;
+             az=255*(Math.round(Math.random())); 
+             bz=255*(Math.round(Math.random())); 
+             cz=255*(Math.round(Math.random())); 
+             var color='rgb('+az+','+bz+','+cz+')';
+             $('input:last').css('background-color',color);
+             */
+            //var i=200*(Math.round(Math.random())); 
+            var i = Math.round(Math.random() * 147);
+            //var colorsett=$('input:last').attr('color',nomcolor[i]);
+            //while(colorsett != null) || ab<3) {tabcomp.push(nomcolor[i]));}
+
+            /*//deb
+             if (!colorsett) {
+             tabcomp.push(nomcolor[i]);
+             } //ab++; on set dans un 2nd tableau
+             else if (colorsett) {
+             //on scan le 2nd tableau si ca existe,  on refait un random color}
+             for(z=0;z<tabcomp.length;z++) {
+             if(tabcomp[z]==nomcolor[i]) { 
+             compteur++; double ou pas?
+             if(compteur>2) {
+             //tu sors et random de nouveau
+             return 3;
+             }
+             }
+             }
+             } 
+             *///fin
+
+            //controle de boublon dans le second tableau
+            for (z = 0; z < tabcomp.length; z++) {
+            if (tabcomp[z] == nomcolor[i]) {
+            //couleur existe
+            compteur++; //double ou pas?
+            if (compteur > 2) {
+            //tu sors et random de nouveau
+            return 3;
+            }
+            }
+            else { couleur n'existe pas , on peut set, et on continue'}
+            }
+
+            // on set la couleur sur input
+            $('input:last').css('background-color', nomcolor[i]);
+            //set l'attribut color="nomcolor[i]" dans le tag input
+            // $('input:last').attr('color',nomcolor[i]);
+
+            //$('input:last').css('background-color','YellowGreen');
+            //$(even.target).css*/
+            }
+            }
+            $('.tableau').append('<br><br>');
+            //alea=255*(Math.round(Math.random())); 
+            /*alea=Math.random();
+             $('.contenu').html(alea);
+             alea=Math.round(alea);
+             $('.contenu').html(alea);
+             alea=255*alea;
+             */
+            $('.contenu').html(alea);
+            //$('.contenu').html(nomcolor.length);
+
+            }
+            //fin fonction debut
+
+
+            /*        tab += "<table><tbody>
+             <tr>
+             <td>aun</td>
+             <td>adeux</td>
+             </tr>
+             <tr>
+             <td>bun</td>
+             <td><bdeux></td>
+             </tr>
+             </tbody></table>";
+             //alert(tab);
+             $('.contenu').append(tab);
+             
+             //$( 'tab').appendTo( $( ".contenu" ) );
+             */
+
+            /*  if ($('.contenu input').val)) {alert($('.contenu input').val));}
+             else { alert('val n existe pas'); }
+             $alert($('.contenu input').val);
+             }*/
+
+            $(document).ready(debut);
+            function generetab() {
+            $('.contenu').append('demande le nombre de case');
+            }
+        </script>
+    </head>
+    <body>
+        <div>Jeu memory</div>
+        <section>
+            <div class="contenu">Contenu</div><br><br>
+            <div class="tableau">Ci-dessous s'affichera le tableau</div>
+
+        </section>
+        <p><a href="index.html" target="self">homepage</a></p>
+    </body>
+</html>
